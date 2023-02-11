@@ -32,6 +32,12 @@ server:
 - GCS_SA_B64 --> GCP Service Account Base64 encoded from json
 - CONFIG_PATH --> Path to config file
 
+## How to run example
+
+```bash
+$ docker run -p8080:8080 -d -v "./config.yaml:/app/config.yaml" ghcr.io/guaychou/gcs-proxy:v0.0.1
+```
+
 ## Credit
 - [Zero To Production](https://www.zero2prod.com/) for Architect the application code
 - [Actix Web](https://actix.rs/) for the stable, blazingly fast, and battle tested web server written in rust with actor model
