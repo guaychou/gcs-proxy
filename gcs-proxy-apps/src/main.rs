@@ -17,7 +17,11 @@ fn main() {
             &std::env::var("CONFIG_PATH").unwrap_or_else(|_| "/app/config.yaml".to_owned()),
         )
         .await;
-        let subscriber = get_subscriber("gcs-proxy-apps".into(), "info".into(), std::io::stdout);
+        let subscriber = get_subscriber(
+            "gcs-proxy-apps".into(),
+            config.log_level.to_string(),
+            std::io::stdout,
+        );
         init_subscriber(subscriber);
         println!(
             "Starting {} --  version {} ",

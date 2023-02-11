@@ -9,3 +9,4 @@ server:
   auth: 
     username: pogpog
     password: pogpog
+log_level: info

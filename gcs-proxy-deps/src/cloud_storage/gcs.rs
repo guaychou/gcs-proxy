@@ -12,19 +12,19 @@ pub struct GcsClient {
     folder: Option<String>,
 }
 
-type DownloadedObject = Vec<u8>;
 impl GcsClient {
     pub fn new(config: GcsConfig) -> Result<GcsClient, anyhow::Error> {
-        let sa = match std::env::var("GCP_SA_B64"){
-            Ok(val)=> val,
-            Err(e) => {
-                match config.get_service_account_b64().to_owned(){
+        let sa =
+            match std::env::var("GCP_SA_B64") {
+                Ok(val) => val,
+                Err(e) => match config.get_service_account_b64().to_owned() {
                     Some(val) => val,
-                    None => return Err(anyhow::Error::new(e).context("neither GCP_SA_B64 env variable nor service account in config file is set")),
-                }
-            }
-        };
-       
+                    None => return Err(anyhow::Error::new(e).context(
+                        "neither GCP_SA_B64 env variable nor service account in config file is set",
+                    )),
+                },
+            };
+
         let data = String::from_utf8(general_purpose::STANDARD.decode(sa)?)?;
         std::env::set_var("GOOGLE_APPLICATION_CREDENTIALS_JSON", data);
         let client = Arc::new(Client::new());
@@ -35,7 +35,7 @@ impl GcsClient {
         })
     }
 
-    pub async fn get_object(&self, file_name: &str) -> Result<DownloadedObject, Error> {
+    pub async fn get_object(&self, file_name: &str) -> Result<Vec<u8>, Error> {
         let file_name = if let Some(prefix) = &self.folder {
             format!("{prefix}/{file_name}")
         } else {

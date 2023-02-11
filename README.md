@@ -8,8 +8,13 @@ GCS proxy is tools to download file in gcs without knowing the gcs url, and abst
 
 ## Project Status --> Beta
 
+## Routes
+
+- /_/download/{file_name}
+
 ## Example Yaml Config
 ```yaml
+log_level: info # debug / info / warn / error
 server:
   http:
     port: 8080
@@ -25,6 +30,7 @@ server:
 
 ## Environment Variable
 - GCS_SA_B64 --> GCP Service Account Base64 encoded from json
+- CONFIG_PATH --> Path to config file
 
 ## Credit
 - [Zero To Production](https://www.zero2prod.com/) for Architect the application code
