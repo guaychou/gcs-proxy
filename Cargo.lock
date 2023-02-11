@@ -477,21 +477,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5827cebf4670468b8772dd191856768aedcb1b0278a04f989f7766351917b9dc"
 
 [[package]]
-name = "coult"
-version = "0.2.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1fc6b9e2074fe6345b615ef43015f25439c50bea78aed781542308a45d48693"
-dependencies = [
- "hyper",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "cpufeatures"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -768,7 +753,6 @@ dependencies = [
 name = "gcs-proxy-apps"
 version = "0.1.0"
 dependencies = [
- "coult",
  "figlet-rs",
  "gcs-proxy-deps",
  "gcs-proxy-extras",
