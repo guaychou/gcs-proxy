@@ -3,7 +3,7 @@
 
 ## What is this
 ```
-GCS proxy is tools to download file in gcs without knowing the gcs url, and abstract it with http basic auth feature in rust
+GCS proxy is tools to download file in google cloud storage without knowing the google cloud storage url, and abstract it with http basic auth feature in rust
 ```
 
 ## Project Status --> Beta
