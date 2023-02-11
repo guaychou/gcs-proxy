@@ -1,9 +1,10 @@
-# GCS Downloader
+# GCS Proxy
 
 
-## Features
-
-- GCS proxy downloader in rust to specific bucket
+## What is this
+```
+GCS proxy is tools to download file in gcs without knowing the gcs url, and abstract it with http basic auth feature in rust
+```
 
 ## Project Status --> Beta
 
