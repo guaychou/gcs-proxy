@@ -27,7 +27,7 @@ server:
 - GCS_SA_B64 --> GCP Service Account Base64 encoded from json
 
 ## Credit
-- [Zero To Prodcution](https://www.zero2prod.com/) for Architect the application code
+- [Zero To Production](https://www.zero2prod.com/) for Architect the application code
 - [Actix Web](https://actix.rs/) for the stable, blazingly fast, and battle tested web server written in rust with actor model
 
 ## Maintainer
