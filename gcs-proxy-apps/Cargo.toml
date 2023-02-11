@@ -1,0 +1,23 @@
+[package]
+name = "gcs-proxy-apps"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio =  { version = "1.21.2",  default-features = false ,features = ["rt-multi-thread"] }
+coult = "0.2.5"
+figlet-rs = "0.1.4"
+serde = "1"
+gcs-proxy-deps = { path = "../gcs-proxy-deps" }
+gcs-proxy-server = { path = "../gcs-proxy-server" }
+gcs-proxy-extras = { path = "../gcs-proxy-extras" }
+tracing = "0.1.37"
+serde_yaml = "0.9"
+
+[target.x86_64-unknown-linux-gnu.dependencies]
+jemallocator = { version = "0.5" }
+
+[target.x86_64-unknown-linux-musl.dependencies]
+mimalloc = "0.1.30"

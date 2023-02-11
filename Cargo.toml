@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [
+    "gcs-proxy-extras", 
+    "gcs-proxy-deps", 
+    "gcs-proxy-server",
+    "gcs-proxy-apps"
+]
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = 'abort'

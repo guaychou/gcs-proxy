@@ -1,0 +1,11 @@
+server:
+  http:
+    port: 8080
+    shutdown_timeout: 30
+  gcs:
+    bucket: kepintez
+    folder: "folder_to_jail"
+    # service_account_b64: "exampleofbase64sa"
+  auth: 
+    username: pogpog
+    password: pogpog
