@@ -61,4 +61,18 @@ impl GcsClient {
             .download_streamed(self.bucket.as_str(), file_name.as_str())
             .await
     }
+
+    pub async fn get_file_size(&self, file_name: &str) -> Result<u64, Error> {
+        let file_name = if let Some(prefix) = &self.folder {
+            format!("{prefix}/{file_name}")
+        } else {
+            file_name.to_string()
+        };
+        let props = self
+            .client
+            .object()
+            .read(self.bucket.as_str(), file_name.as_str())
+            .await?;
+        Ok(props.size)
+    }
 }

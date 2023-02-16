@@ -1,6 +1,7 @@
 //use super::model::Response;
 use super::model::RequestModel;
 use crate::error::AppError;
+use actix_web::body::SizedStream;
 use actix_web::{get, http::header, web, web::Bytes, HttpResponse};
 use futures::stream;
 use futures::StreamExt;
@@ -21,8 +22,10 @@ async fn download_async(
             Ok(None)
         }
     });
+
+    let stream = SizedStream::new(gcs.get_file_size(request.filename.as_str()).await?, stream);
     let header_disposition_value = format!("attachment; filename={}", request.filename);
     Ok(HttpResponse::Ok()
         .append_header((header::CONTENT_DISPOSITION, header_disposition_value))
-        .streaming(Box::pin(stream)))
+        .body(stream))
 }

@@ -751,7 +751,7 @@ dependencies = [
 
 [[package]]
 name = "gcs-proxy-apps"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "figlet-rs",
  "gcs-proxy-deps",
@@ -767,7 +767,7 @@ dependencies = [
 
 [[package]]
 name = "gcs-proxy-deps"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "base64 0.21.0",
@@ -782,7 +782,7 @@ dependencies = [
 
 [[package]]
 name = "gcs-proxy-extras"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "actix-web",
  "figlet-rs",
@@ -798,7 +798,7 @@ dependencies = [
 
 [[package]]
 name = "gcs-proxy-server"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "actix-web",
  "actix-web-httpauth",
