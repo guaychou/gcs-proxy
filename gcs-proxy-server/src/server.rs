@@ -1,6 +1,7 @@
 use super::route::download_async;
 use crate::config::Config;
 use actix_web::dev::Server as http_server;
+use actix_web::middleware::DefaultHeaders;
 use actix_web::web::Data;
 use actix_web::{App, HttpServer};
 use actix_web_httpauth::middleware::HttpAuthentication;
@@ -21,6 +22,11 @@ impl Server {
         let auth = HttpAuthentication::basic(super::middleware::validator);
         let server = HttpServer::new(move || {
             App::new()
+                .wrap(
+                    DefaultHeaders::new()
+                        .add(("x-proxy-author", "guaychou"))
+                        .add(("x-proxy-version", env!("CARGO_PKG_VERSION"))),
+                )
                 .app_data(config.auth.clone())
                 .wrap(TracingLogger::default())
                 .wrap(auth.clone())

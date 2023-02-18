@@ -1,7 +1,7 @@
 use super::config::GcsConfig;
 use base64::{engine::general_purpose, Engine as _};
 use cloud_storage::Client;
-use cloud_storage::Error;
+use cloud_storage::{Bytes, Error};
 use futures::stream::Stream;
 use std::sync::Arc;
 
@@ -35,22 +35,10 @@ impl GcsClient {
         })
     }
 
-    pub async fn get_object(&self, file_name: &str) -> Result<Vec<u8>, Error> {
-        let file_name = if let Some(prefix) = &self.folder {
-            format!("{prefix}/{file_name}")
-        } else {
-            file_name.to_string()
-        };
-        self.client
-            .object()
-            .download(self.bucket.as_str(), file_name.as_str())
-            .await
-    }
-
     pub async fn get_object_stream(
         &self,
         file_name: &str,
-    ) -> Result<impl Stream<Item = Result<u8, Error>> + Unpin, Error> {
+    ) -> Result<impl Stream<Item = Result<Bytes, Error>> + Unpin, Error> {
         let file_name = if let Some(prefix) = &self.folder {
             format!("{prefix}/{file_name}")
         } else {
@@ -58,7 +46,7 @@ impl GcsClient {
         };
         self.client
             .object()
-            .download_streamed(self.bucket.as_str(), file_name.as_str())
+            .download_bytes_stream(self.bucket.as_str(), file_name.as_str())
             .await
     }
 
