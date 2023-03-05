@@ -4,8 +4,7 @@
 <img src=./img/logo.png>
 </p>
 <p align="center">
-<a href="https://github.com/guaychou/gcs-proxy/workflows/github_action.yaml">
-<img src="https://github.com/guaychou/gcs-proxy/workflows/ci/badge.svg">
+[![ci](https://github.com/guaychou/gcs-proxy/actions/workflows/github_actions.yaml/badge.svg)](https://github.com/guaychou/gcs-proxy/actions/workflows/github_actions.yaml)
 </a>
 </p>
 
