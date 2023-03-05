@@ -1,12 +1,14 @@
 # GCS Proxy
 
+<center><img src=./img/logo.png></center>
 
-## What is this
-```
+<center><a href="https://github.com/guaychou/gcs-proxy/workflows/github_action.yaml">
+<img src="https://github.com/guaychou/gcs-proxy/workflows/ci/badge.svg">
+</a>
+</center>
+
+---
 GCS proxy is tools to download file in google cloud storage without knowing the google cloud storage url, and abstract it with http basic auth feature in rust
-```
-
-## Project Status --> Beta
 
 ## Routes
 
@@ -23,7 +25,7 @@ server:
     bucket: kepintez
     folder: "folder_to_jail"
     # service_account_b64: "exampleofbase64sa"
-  auth: 
+  auth:
     username: pogpog
     password: pogpog
 ```
@@ -35,7 +37,7 @@ server:
 ## How to run example
 
 ```bash
-$ docker run -p8080:8080 -d -v "./config.yaml:/app/config.yaml" ghcr.io/guaychou/gcs-proxy:v0.0.1
+$ docker run -p8080:8080 -d -v "./config.yaml:/app/config.yaml" ghcr.io/guaychou/gcs-proxy:v1.0.0
 ```
 
 ## Credit

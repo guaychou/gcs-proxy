@@ -729,7 +729,7 @@ dependencies = [
 
 [[package]]
 name = "gcs-proxy-apps"
-version = "0.1.2"
+version = "1.0.0"
 dependencies = [
  "figlet-rs",
  "gcs-proxy-deps",
