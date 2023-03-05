@@ -3,10 +3,11 @@
 <p align="center">
 <img src=./img/logo.png>
 </p>
-<p align="center">
+<div align="center">
+
 [![ci](https://github.com/guaychou/gcs-proxy/actions/workflows/github_actions.yaml/badge.svg)](https://github.com/guaychou/gcs-proxy/actions/workflows/github_actions.yaml)
-</a>
-</p>
+
+</div>
 
 ---
 GCS proxy is tools to download file in google cloud storage without knowing the google cloud storage url, and abstract it with http basic auth feature in rust
