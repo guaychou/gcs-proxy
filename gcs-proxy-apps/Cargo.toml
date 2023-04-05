@@ -19,4 +19,4 @@ serde_yaml = "0.9"
 jemallocator = { version = "0.5" }
 
 [target.x86_64-unknown-linux-musl.dependencies]
-mimalloc = "0.1.30"
+mimalloc = "0.1.36"
