@@ -9,7 +9,7 @@ edition = "2021"
 tracing = "0.1.37"
 actix-web = {version = "4", default-features = false, features = ["macros"]}
 serde = "1.0"
-anyhow = "1.0.70"
+anyhow = "1.0.71"
 gcs-proxy-deps = { path = "../gcs-proxy-deps" }
 gcs-proxy-extras = { path = "../gcs-proxy-extras" }
 getset = "0.1.2"
